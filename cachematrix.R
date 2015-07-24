@@ -2,21 +2,25 @@
 ##by caching the inverse of a matrix.
 
 
-## 
+## This function prepare a list containing a function to:
+## 1.set the value of the matrix
+## 2.get the value of the matrix
+## 3.set the value of the solve
+## 4.get the value of the solve
 makeCacheMatrix <- function(x = matrix()) {
   ## sets the value of m to NULL for default if cacheSolve
   ## has not yet been used.
   m<-NULL
-  ##set the value of the matrix
+  ##1.set the value of the matrix
   set<-function(y){
     x<<-y
     m<<-NULL
   }
-  ##get the values of the matrix
+  ##2.get the values of the matrix
   get<-function() x
-  ##set the value of the solve
+  ##3.set the value of the solve
   setmatrix<-function(solve) m<<- solve
-  ##get the value of the solve
+  ##4.get the value of the solve
   getmatrix<-function() m
   ##create a list containing de sets and gets
   list(set=set, get=get,
